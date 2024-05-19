@@ -1,15 +1,14 @@
-# DATN
 Hướng dẫn sử dụng chương trình nhận diện biển báo giao thông bằng Python và OpenCV
-1. Cài đặt các thư viện cần thiết
+# 1. Cài đặt các thư viện cần thiết
 Trước tiên, bạn cần cài đặt các thư viện cần thiết. Bạn có thể sử dụng pip để cài đặt OpenCV và các thư viện liên quan khác.
 
 bash
 Sao chép mã
 pip install opencv-python numpy
-2. Chuẩn bị dữ liệu
+# 2. Chuẩn bị dữ liệu
 Bạn cần có tập dữ liệu về các biển báo giao thông để huấn luyện và kiểm tra mô hình. Tập dữ liệu có thể bao gồm các hình ảnh biển báo và nhãn tương ứng. Có nhiều tập dữ liệu sẵn có trên mạng như GTSRB (German Traffic Sign Recognition Benchmark).
 
-3. Tạo chương trình nhận diện biển báo
+# 3. Tạo chương trình nhận diện biển báo
 Dưới đây là mã nguồn cơ bản để đọc hình ảnh, tiền xử lý và nhận diện biển báo giao thông.
 
 python
@@ -45,7 +44,7 @@ class_id = recognize_traffic_sign(image_path, model)
 
 # In ra kết quả
 print(f'Biển báo giao thông được nhận diện là: {class_id}')
-4. Huấn luyện mô hình nhận diện (nếu chưa có mô hình đã huấn luyện)
+# 4. Huấn luyện mô hình nhận diện (nếu chưa có mô hình đã huấn luyện)
 Để huấn luyện mô hình, bạn cần sử dụng tập dữ liệu đã chuẩn bị và một framework học sâu như TensorFlow/Keras. Dưới đây là một ví dụ đơn giản về cách huấn luyện mô hình CNN để nhận diện biển báo.
 
 python
@@ -90,8 +89,6 @@ model.fit(X_train, y_train, epochs=10, validation_data=(X_test, y_test))
 
 # Lưu mô hình
 model.save('traffic_sign_model.h5')
-5. Chạy chương trình
+# 5. Chạy chương trình
 Sau khi đã có mô hình huấn luyện, bạn có thể sử dụng nó để nhận diện các biển báo giao thông mới bằng cách sử dụng đoạn mã đã trình bày ở mục 3.
 
-Kết luận
-Đây là một hướng dẫn cơ bản để bạn bắt đầu với việc nhận diện biển báo giao thông bằng Python và OpenCV. Bạn có thể mở rộng và tối ưu hóa mô hình của mình bằng cách thử nghiệm với các cấu trúc mạng khác nhau, điều chỉnh các tham số và sử dụng tập dữ liệu lớn hơn.
